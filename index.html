@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◧</span>
+      <h1>Kanban Board</h1>
+    </div>
+    <div class="topbar-actions">
+      <div class="search">
+        <input id="search" type="text" placeholder="Buscar tarea…" />
+      </div>
+      <button id="clearAll" class="btn btn-ghost" title="Borrar todo">Limpiar</button>
+      <button id="themeToggle" class="btn btn-ghost" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+
+  <main id="board" class="board">
+    <!-- Columnas generadas por JS -->
+  </main>
+
+  <!-- Modal nueva/editar tarea -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <h2 id="modalTitle">Nueva tarea</h2>
+      <label>Título
+        <input id="taskTitle" type="text" placeholder="¿Qué hay que hacer?" />
+      </label>
+      <label>Descripción
+        <textarea id="taskDesc" rows="3" placeholder="Detalles (opcional)"></textarea>
+      </label>
+      <div class="modal-row">
+        <label>Prioridad
+          <select id="taskPriority">
+            <option value="low">Baja</option>
+            <option value="medium" selected>Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </label>
+        <label>Columna
+          <select id="taskColumn"></select>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button id="cancelTask" class="btn btn-ghost">Cancelar</button>
+        <button id="saveTask" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="fab" class="fab" title="Añadir tarea">+</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
